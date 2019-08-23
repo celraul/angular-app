@@ -1,0 +1,35 @@
+<div class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <h1>Login</h1>
+            <form role="form" [formGroup]="formLogin" class="form-base" (ngSubmit)="onLoggedin(formLogin.value)">
+                <div class="form-content">
+                    <mat-form-field class="full-width inputs-login">
+                        <input matInput placeholder="E-mail" class="form-control input-lg"
+                            formControlName="email" maxlength="100">
+                        <mat-error *ngIf="formLogin.get('email').hasError('required')">
+                           E-mail is <strong>required</strong>
+                        </mat-error>
+                        <mat-error *ngIf="formLogin.get('email').hasError('email')">
+                           E-mail invalid
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width inputs-login">
+                        <input type="password" matInput placeholder="" class="form-control input-lg"
+                            formControlName="password" id="password">
+                        <mat-error *ngIf="formLogin.get('password').hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <div>
+                        <a href="#" (click)="resetPassword(); $event.preventDefault();">Reset password
+                        </a>
+                    </div>
+                </div>
+                <a class="btn rounded-btn" [routerLink]="['/register']">Register</a>
+                &nbsp;
+                <button type="submit" class="btn rounded-btn" [disabled]="formLogin.invalid">Log in </button>
+            </form>
+        </div>
+    </div>
+</div>

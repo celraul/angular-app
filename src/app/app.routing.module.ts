@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from "@angular/router";
 import { LoggedInTemplateComponent } from './templates/loggedin-template/loggedin-template.component';
 import { AuthGuard } from './security/auth-guard';
+import { NotLoggedInTemplateComponent } from './templates/not-loggedin-template/not-loggedin-template.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const APP_ROUTES: Routes = [
     {
@@ -14,6 +16,20 @@ const APP_ROUTES: Routes = [
         component: LoggedInTemplateComponent,
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
         canActivate: [AuthGuard]
+    },
+    {
+        path: 'login',
+        component: NotLoggedInTemplateComponent,
+        loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule),
+        canActivate: [AuthGuard]
+    },
+    {
+        path: '**',
+        component: NotLoggedInTemplateComponent,
+        children: [{
+            path: '',
+            component: NotFoundPageComponent,
+        }],
     }
 ];
 

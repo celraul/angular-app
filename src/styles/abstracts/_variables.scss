@@ -1,0 +1,38 @@
+// colors
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #EB5757 !default;
+$orange: #F7941D !default;
+$yellow: #ffc107 !default;
+$green: #2E9A81 !default;
+$teal: #39BB9D !default;
+$cyan: #17a2b8 !default;
+// stylelint-disable
+$white : #fff !default;
+$gray-100: #FAFAFA !default;
+$gray-200: #E5E5E5 !default;
+$gray-300: #E0E0E0 !default;
+$gray-400: #ced4da !default;
+$gray-500: #BDBDBD !default;
+$gray-600: #828282 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #262626 !default;
+$black : #000 !default;
+$grays: () !default;
+$grays: map-merge(( "100": $gray-100, "200": $gray-200, "300": $gray-300, "400": $gray-400, "500": $gray-500, "600": $gray-600, "700": $gray-700, "800": $gray-800, "900": $gray-900), $grays);
+// base colors
+$primary: $teal !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $black !default;
+$topnav-background-color: #222;
+
+//animations
+$base-duration: 0.25s;

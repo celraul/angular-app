@@ -8,8 +8,11 @@ import { NotLoggedInTemplateComponent } from './templates/not-loggedin-template/
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing.module';
 import { CustomErrorHandler } from './app.error-handler';
-import { ToasterService } from './shared/serivices/toaster.service';
+import { ToasterService } from './shared/services/toaster.service';
 import { SnotifyService, ToastDefaults, SnotifyModule } from 'ng-snotify';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import * as moment from 'moment';
+// import 'moment/locale/pt-br';
 
 @NgModule({
   declarations: [
@@ -19,10 +22,11 @@ import { SnotifyService, ToastDefaults, SnotifyModule } from 'ng-snotify';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     SnotifyModule,
-    SharedModule.forRoot(),
+    SharedModule.forRoot()
   ],
   providers: [
     { provide: ErrorHandler, useClass: CustomErrorHandler },

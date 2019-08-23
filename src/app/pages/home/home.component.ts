@@ -1,5 +1,5 @@
 import { OnInit, Component } from '@angular/core';
-import { ToasterService } from 'src/app/shared/serivices/toaster.service';
+import { ToasterService } from 'src/app/shared/services/toaster.service';
 
 @Component({
     selector: 'app-home',
@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit{
     constructor(private toasterService : ToasterService) { }
 
     ngOnInit() { 
-        this.toasterService.onSuccess("Deu bom", "olá");
-
+        //this.toasterService.onSuccess("Deu bom", "olá");
     }
 }

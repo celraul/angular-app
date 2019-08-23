@@ -24,8 +24,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/styles/main.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -120,6 +126,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "simple-app"
 }

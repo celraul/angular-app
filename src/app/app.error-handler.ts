@@ -1,7 +1,7 @@
 import { ErrorHandler, Injectable, Injector, NgZone } from "@angular/core";
 import { UNAUTHORIZED, BAD_REQUEST, FORBIDDEN, INTERNAL_SERVER_ERROR } from "http-status-codes";
 import { HttpErrorResponse } from "@angular/common/http";
-import { ToasterService } from './shared/serivices/toaster.service';
+import { ToasterService } from './shared/services/toaster.service';
 
 @Injectable()
 export class CustomErrorHandler extends ErrorHandler {
