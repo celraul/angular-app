@@ -1,8 +1,13 @@
-<app-nav></app-nav>
 <!-- <app-sidebar (collapsedEvent)="receiveCollapsed($event)"></app-sidebar> -->
-<section class="main-container" [ngClass]="{collapsed: collapedSideBar}">
-    <router-outlet>
-    </router-outlet>
-</section>
+<div class="d-flex" id="wrapper">
+    <app-sidebar></app-sidebar>
+    <div id="page-content-wrapper">
+        <app-nav></app-nav>
+
+        <router-outlet>
+        </router-outlet>
+    </div>
+
+</div>
 
 <app-footer></app-footer>

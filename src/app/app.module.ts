@@ -13,6 +13,7 @@ import { ToasterService } from './shared/services/toaster.service';
 import { SnotifyService, ToastDefaults, SnotifyModule } from 'ng-snotify';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StorageService } from './shared/services/storage.service';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 // import * as moment from 'moment';
 // import 'moment/locale/pt-br';
 
@@ -28,7 +29,8 @@ import { StorageService } from './shared/services/storage.service';
     HttpClientModule,
     AppRoutingModule,
     SnotifyModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [
     { provide: ErrorHandler, useClass: CustomErrorHandler },
