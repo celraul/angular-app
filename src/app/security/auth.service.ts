@@ -1,7 +1,7 @@
+import { StorageService } from './../shared/services/storage.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { UserStorageModel } from '../shared/model/user-storage.model';
-import { StorageService } from '../shared/services/storage.service';
 import { HttpClient } from '@angular/common/http';
 import { SITE_API } from '../app.consts';
 import { map } from 'rxjs/operators';
@@ -23,6 +23,16 @@ export class AuthService {
         return this.http.post<any>(`${SITE_API}/auth/login`, {
             username: username,
             password: password
+        }).pipe(map(res => {
+            this.storageService.setStorage(res);
+            return res;
+        }));
+    }
+
+    emailInUse(email: string) {
+        debugger;
+        return this.http.post<any>(`${SITE_API}/auth/email-in-use`, {
+            email: email
         }).pipe(map(res => {
             this.storageService.setStorage(res);
             return res;

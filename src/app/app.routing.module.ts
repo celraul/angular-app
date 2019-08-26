@@ -24,12 +24,13 @@ const APP_ROUTES: Routes = [
         loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
     },
     {
-        path: '**',
+        path: 'register',
         component: NotLoggedInTemplateComponent,
-        children: [{
-            path: '',
-            component: NotFoundPageComponent,
-        }],
+        loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule)
+    },
+    {
+        path: '**',
+        component: NotFoundPageComponent
     }
 ];
 

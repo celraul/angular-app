@@ -1,6 +1,7 @@
+import { AuthService } from './../../security/auth.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToasterService } from 'src/app/shared/services/toaster.service';
 import { LoginModel } from 'src/app/model/Login,model';
 
@@ -9,20 +10,25 @@ import { LoginModel } from 'src/app/model/Login,model';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit, OnDestroy{
+export class LoginComponent implements OnInit, OnDestroy {
     formLogin: FormGroup;
+    loading = false;
+    returnUrl: string;
 
-    constructor(private formBuilder: FormBuilder, private toasterService: ToasterService, 
-                private router: Router) {
+    constructor(private formBuilder: FormBuilder, private toasterService: ToasterService,
+        private router: Router, private activatedRoute: ActivatedRoute, private authService: AuthService) {
     }
 
     ngOnInit() {
         this.initComponents();
+
+        this.authService.logout();
+        this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
     }
 
     ngOnDestroy() { }
 
-    initComponents() { 
+    initComponents() {
         this.initForm();
     }
 
@@ -35,13 +41,16 @@ export class LoginComponent implements OnInit, OnDestroy{
 
     onLoggedin(login: LoginModel) {
         if (!this.formLogin.invalid) {
+            this.loading = true;
             //localStorage.setItem('isLoggedin', 'true');
-            this.router.navigate(['/']);
-            // this.authService.login(login).subscribe(result => {
-            //     localStorage.setItem('isLoggedin', 'true');
-            // });
+            this.authService.login(login.email, login.password).subscribe(result => {
+                this.router.navigate(['/']);
+                this.loading = false;
+            });
         } else {
             this.toasterService.onInfo("Nome e senha devem ser informados")
         }
     }
+
+    resetPassword() { }
 }
