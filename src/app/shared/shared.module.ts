@@ -9,7 +9,7 @@ import { AuthInterceptor } from '../security/auth.interceptor';
 import { NotFoundPageComponent } from '../pages/not-found-page/not-found-page.component';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
     exports: [
         CommonModule,
@@ -20,14 +20,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         NotFoundPageComponent,
         FormsModule,
         MaterialModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FontAwesomeModule
     ],
     imports: [
         CommonModule,
         RouterModule,
         FormsModule,
         MaterialModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FontAwesomeModule
     ],
     declarations: [
         NavComponent,

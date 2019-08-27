@@ -29,8 +29,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     HttpClientModule,
     AppRoutingModule,
     SnotifyModule,
-    SharedModule.forRoot(),
-    AngularFontAwesomeModule
+    SharedModule.forRoot()
   ],
   providers: [
     { provide: ErrorHandler, useClass: CustomErrorHandler },

@@ -1,6 +1,5 @@
 import { OnInit, Component } from '@angular/core';
 import { ToasterService } from 'src/app/shared/services/toaster.service';
-import * as $ from 'jquery';
 
 @Component({
     selector: 'app-home',
@@ -13,10 +12,5 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         //this.toasterService.onSuccess("Deu bom", "olá");
-
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
     }
 }
