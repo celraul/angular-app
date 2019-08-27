@@ -10,6 +10,7 @@ import { NotFoundPageComponent } from '../pages/not-found-page/not-found-page.co
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
     exports: [
         CommonModule,

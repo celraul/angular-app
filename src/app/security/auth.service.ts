@@ -30,7 +30,6 @@ export class AuthService {
     }
 
     emailInUse(email: string) {
-        debugger;
         return this.http.post<any>(`${SITE_API}/auth/email-in-use`, {
             email: email
         }).pipe(map(res => {
