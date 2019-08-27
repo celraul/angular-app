@@ -10,19 +10,25 @@ import { NotFoundPageComponent } from '../pages/not-found-page/not-found-page.co
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TitleDirective } from './directives/title.directive';
 
 @NgModule({
     exports: [
         CommonModule,
         RouterModule,
+        FormsModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        FontAwesomeModule,
+
+        // components
         NavComponent,
         SidebarComponent,
         FooterComponent,
         NotFoundPageComponent,
-        FormsModule,
-        MaterialModule,
-        ReactiveFormsModule,
-        FontAwesomeModule
+
+        // directives
+        TitleDirective
     ],
     imports: [
         CommonModule,
@@ -36,7 +42,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         NavComponent,
         SidebarComponent,
         FooterComponent,
-        NotFoundPageComponent
+        NotFoundPageComponent,
+        TitleDirective
     ],
     providers: []
 })

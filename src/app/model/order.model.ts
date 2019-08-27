@@ -1,3 +1,4 @@
 export interface OrderModel {
-    id: number
+    id: number,
+    name: string
 }

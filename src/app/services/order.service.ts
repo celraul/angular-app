@@ -13,4 +13,9 @@ export class OrderService {
     getOrders(skip: number = 1, take: number = 10, orderBy: string = ""): Observable<OrderModel[]> {
         return this.http.get<OrderModel[]>(`${SITE_API}/order?skip=${skip}&take=${take}&take=${orderBy}`).pipe(map(response => response));
     }
+
+    //https://www.mocky.io/
+    getOrdersMock(skip: number = 1, take: number = 10, orderBy: string = ""): Observable<OrderModel[]> {
+        return this.http.get<OrderModel[]>(`http://www.mocky.io/v2/5d6584f9340000499bf44815`).pipe(map(response => response));
+    }
 }
