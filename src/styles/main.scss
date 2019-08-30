@@ -4,8 +4,12 @@
 
 //components
 @import "./components/spinner";
+@import "./components/material";
 
 //layout
 @import "./layout/forms";
 
-@import 'shame';
+//theme
+@import "./themes/theme01";
+
+@import "shame";

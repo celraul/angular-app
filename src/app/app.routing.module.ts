@@ -29,9 +29,9 @@ const APP_ROUTES: Routes = [
         loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule)
     },
     {
-        path: 'orders',
+        path: 'movimentos',
         component: LoggedInTemplateComponent,
-        loadChildren: () => import('./pages/orders/orders.module').then(m => m.OrdersModule)
+        loadChildren: () => import('./pages/movimentos/movimentos.module').then(m => m.MovimentosModule)
     },
     {
         path: '**',

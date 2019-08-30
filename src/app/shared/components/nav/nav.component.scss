@@ -1,0 +1,27 @@
+.navbar-header {
+  width: 100%;
+  .user-menu {
+    float: right;
+    right: 0;
+  }
+  .container-menu-profile {
+    width: 150px;
+    float: right;
+    .navbar-menu-profile {
+      position: absolute;
+      background-color: white;
+      top: 42px;
+      border: none;
+      border-radius: 0;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    display: block;
+    flex-basis: auto;
+    flex-grow: 0;
+  }
+}

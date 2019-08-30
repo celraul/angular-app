@@ -1,42 +1,42 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { OrderService } from 'src/app/services/order.service';
+import { MovimentoService } from 'src/app/services/movimento.service';
 import { Observable, Subscription } from 'rxjs';
-import { OrderModel } from 'src/app/model/order.model';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { MovimentoModel } from 'src/app/model/movimento.model';
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.scss']
+  selector: 'app-movimentos',
+  templateUrl: './movimentos.component.html',
+  styleUrls: ['./movimentos.component.scss']
 })
-export class OrdersComponent implements OnInit, OnDestroy {
+export class MovimentosComponent implements OnInit, OnDestroy {
 
-  private ordersSubscription: Subscription;
+  private movimentosSubscription: Subscription;
 
   // use async pipe
-  orders$: Observable<OrderModel[]>
+  movimentos$: Observable<MovimentoModel[]>
 
   //material table
   displayedColumns: string[] = ['id', 'name'];
-  dataSource: MatTableDataSource<OrderModel>;
+  dataSource: MatTableDataSource<MovimentoModel>;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private orderService: OrderService) { }
+  constructor(private movimentoService: MovimentoService) { }
 
   ngOnInit() {
     this.initComponents();
   }
 
   ngOnDestroy() {
-    this.ordersSubscription.unsubscribe();
+    this.movimentosSubscription.unsubscribe();
   }
 
   initComponents() {
     // to use async
-    this.orders$ = this.orderService.getOrders();
+    this.movimentos$ = this.movimentoService.getMovimentos();
 
-    this.ordersSubscription = this.orderService.getOrdersMock().subscribe(resp => {
+    this.movimentosSubscription = this.movimentoService.getMovimentosMock().subscribe(resp => {
       this.dataSource = new MatTableDataSource(resp);
     });
   }

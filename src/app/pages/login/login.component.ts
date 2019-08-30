@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     initForm() {
         this.formLogin = this.formBuilder.group({
-            email: [null, [Validators.required, Validators.email]],
+            documentNumber: [null, [Validators.required]],
             password: [null, [Validators.required]]
         });
     }
@@ -42,13 +42,13 @@ export class LoginComponent implements OnInit, OnDestroy {
     onLoggedin(login: LoginModel) {
         if (!this.formLogin.invalid) {
             this.loading = true;
-            //localStorage.setItem('isLoggedin', 'true');
-            this.authService.login(login.email, login.password).subscribe(result => {
-                this.router.navigate(['/']);
-                this.loading = false;
-            });
+            this.router.navigate(['/']);
+            // this.authService.login(login.documentNumber, login.password).subscribe(result => {
+            //     this.router.navigate(['/']);
+            //     this.loading = false;
+            // });
         } else {
-            this.toasterService.onInfo("Nome e senha devem ser informados")
+            this.toasterService.onInfo("Documento e senha devem ser informados.")
         }
     }
 

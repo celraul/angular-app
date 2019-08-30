@@ -14,6 +14,10 @@ import { SnotifyService, ToastDefaults, SnotifyModule } from 'ng-snotify';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StorageService } from './shared/services/storage.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { NavComponent } from './shared/components/nav/nav.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 // import * as moment from 'moment';
 // import 'moment/locale/pt-br';
 
@@ -21,7 +25,12 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   declarations: [
     AppComponent,
     LoggedInTemplateComponent,
-    NotLoggedInTemplateComponent
+    NotLoggedInTemplateComponent,
+    // components
+    NavComponent,
+    SidebarComponent,
+    FooterComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,

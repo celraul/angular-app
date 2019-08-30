@@ -5,7 +5,7 @@ import {
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
-    MatTooltipModule
+    MatTooltipModule, MatMenuModule
 } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
@@ -29,14 +29,14 @@ const CUSTOM_FORMATS = {
         MatDividerModule, MatListModule, MatExpansionModule, MatStepperModule,
         MatBottomSheetModule, MatButtonToggleModule, MatDatepickerModule,
         MatIconModule, MatDialogModule, MatTableModule, MatPaginatorModule,
-        MatTooltipModule
+        MatTooltipModule, MatMenuModule
     ],
     exports: [
         MatButtonModule, MatCheckboxModule, MatCardModule, MatInputModule,
         MatDividerModule, MatListModule, MatExpansionModule, MatStepperModule,
         MatBottomSheetModule, MatButtonToggleModule, MatDatepickerModule,
         MatIconModule, MatDialogModule, MatTableModule, MatPaginatorModule,
-        MatTooltipModule
+        MatTooltipModule, MatMenuModule
     ],
     providers: [
         { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },

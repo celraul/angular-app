@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSortDown } from '@fortawesome/free-solid-svg-icons';
 import * as $ from 'jquery';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-nav',
@@ -10,13 +11,20 @@ import * as $ from 'jquery';
 export class NavComponent implements OnInit {
 
     faBars = faBars;
+    faSortDown = faSortDown;
+    isCollapsed = true;
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     ngOnInit() {
-        $("#menu-toggle").click(function (e) {
-            e.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
+    }
+
+    toggleSidebar() {
+        $('.sidebar-admin').toggleClass('active');
+    }
+
+    logout(event) {
+        event.preventDefault();
+        this.router.navigate(['/login']);
     }
 }

@@ -1,0 +1,7 @@
+.sidebar-wrapper {
+  a {
+    &.active-link {
+      background-color: red;
+    }
+  }
+}

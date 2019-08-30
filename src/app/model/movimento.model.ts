@@ -1,4 +1,4 @@
-export interface OrderModel {
+export interface MovimentoModel {
     id: number,
     name: string
 }

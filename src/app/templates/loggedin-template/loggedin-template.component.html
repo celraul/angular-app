@@ -1,13 +1,13 @@
 <!-- <app-sidebar (collapsedEvent)="receiveCollapsed($event)"></app-sidebar> -->
-<div class="d-flex" id="wrapper">
+<div class="wrapper">
     <app-sidebar></app-sidebar>
-    <div id="page-content-wrapper">
+
+    <div class="content">
         <app-nav></app-nav>
-
-        <router-outlet>
-        </router-outlet>
+        <div class="content-page">
+            <router-outlet>
+            </router-outlet>
+        </div>
     </div>
-
 </div>
-
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
