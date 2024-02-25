@@ -1,12 +1,14 @@
-<div class="login-page">
+pagina de login
+<!-- <div class="login-page">
     <div class="row justify-content-md-center">
         <div class="col-md-4">
             <h1>Login</h1>
-            <form role="form" [formGroup]="formLogin" class="form-base form-login" (ngSubmit)="onLoggedin(formLogin.value)">
+            <form role="form" [formGroup]="formLogin" class="form-base form-login"
+                (ngSubmit)="onLoggedin(formLogin.value)">
                 <div class="form-content">
                     <mat-form-field class="full-width inputs-login">
-                        <input matInput placeholder="Documento" class="form-control input-lg" formControlName="documentNumber"
-                            maxlength="100">
+                        <input matInput placeholder="Documento" class="form-control input-lg"
+                            formControlName="documentNumber" maxlength="100">
                         <mat-error *ngIf="formLogin.get('documentNumber').hasError('required')">
                             Documento é <strong>obrigatório</strong>
                         </mat-error>
@@ -23,4 +25,4 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->

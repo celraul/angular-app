@@ -1,47 +1,27 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from '../security/auth.interceptor';
-import { MaterialModule } from './material/material.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TitleDirective } from './directives/title.directive';
-import { BoostrapAppModule } from './boostrap/boostrap.module';
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { ModuleWithProviders, NgModule } from "@angular/core";
+import { AuthInterceptor } from "../security/auth.interceptor";
+import { RouterModule, RouterOutlet } from "@angular/router";
 
 @NgModule({
     exports: [
-        CommonModule,
+        RouterOutlet,
         RouterModule,
-        FormsModule,
-        MaterialModule,
-        ReactiveFormsModule,
-        FontAwesomeModule,
-        BoostrapAppModule,
-
-        // directives
-        TitleDirective
     ],
     imports: [
-        CommonModule,
+        RouterOutlet,
         RouterModule,
-        FormsModule,
-        MaterialModule,
-        ReactiveFormsModule,
-        FontAwesomeModule,
-        BoostrapAppModule
     ],
     declarations: [
-        TitleDirective
     ],
     providers: []
 })
 export class SharedModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<SharedModule> {
         return {
             ngModule: SharedModule,
             providers: [
-                { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+                //{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
             ]
         }
     }

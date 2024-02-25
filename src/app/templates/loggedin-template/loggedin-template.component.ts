@@ -9,11 +9,9 @@ export class LoggedInTemplateComponent implements OnInit {
   title = 'app Logado';
   collapedSideBar: boolean;
 
-  constructor() { }
+  constructor() {
+    this.collapedSideBar = false;
+   }
 
   ngOnInit() { }
-
-  receiveCollapsed($event) {
-    this.collapedSideBar = $event;
-  }
 }

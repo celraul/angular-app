@@ -1,9 +1,8 @@
-import { AuthService } from './../../security/auth.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToasterService } from 'src/app/shared/services/toaster.service';
-import { LoginModel } from 'src/app/model/Login,model';
+import { AuthService } from '../../security/auth.service';
+import { LoginModel } from '../../models/login,model';
 
 @Component({
     selector: 'app-login',
@@ -15,15 +14,22 @@ export class LoginComponent implements OnInit, OnDestroy {
     loading = false;
     returnUrl: string;
 
-    constructor(private formBuilder: FormBuilder, private toasterService: ToasterService,
-        private router: Router, private activatedRoute: ActivatedRoute, private authService: AuthService) {
+    constructor(private formBuilder: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute,
+        private authService: AuthService) {
+
+        this.formLogin = this.formBuilder.group({
+            documentNumber: [null, [Validators.required]],
+            password: [null, [Validators.required]]
+        });
+
+        this.returnUrl = "";
     }
 
     ngOnInit() {
         this.initComponents();
 
-        this.authService.logout();
-        this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
+        // this.authService.logout();
+        // this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
     }
 
     ngOnDestroy() { }
@@ -48,7 +54,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             //     this.loading = false;
             // });
         } else {
-            this.toasterService.onInfo("Documento e senha devem ser informados.")
+
         }
     }
 
