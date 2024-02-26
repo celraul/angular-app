@@ -1,10 +1,8 @@
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home.routing.modules';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { NgModule } from '@angular/core';
-import { ToasterService } from 'src/app/shared/services/toaster.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TitleDirective } from 'src/app/shared/directives/title.directive';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -15,6 +13,6 @@ import { TitleDirective } from 'src/app/shared/directives/title.directive';
         HomeRoutingModule,
         SharedModule
     ],
-    providers: [ToasterService]
+    providers: []
 })
 export class HomeModule { }
