@@ -1,3 +1,4 @@
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { AuthInterceptor } from "../security/auth.interceptor";
@@ -7,10 +8,12 @@ import { RouterModule, RouterOutlet } from "@angular/router";
     exports: [
         RouterOutlet,
         RouterModule,
+        FontAwesomeModule,
     ],
     imports: [
         RouterOutlet,
         RouterModule,
+        FontAwesomeModule,
     ],
     declarations: [
     ],

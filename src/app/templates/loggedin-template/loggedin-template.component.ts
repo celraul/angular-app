@@ -11,7 +11,11 @@ export class LoggedInTemplateComponent implements OnInit {
 
   constructor() {
     this.collapedSideBar = false;
-   }
+  }
 
   ngOnInit() { }
+
+  receiveCollapsed($event: any) {
+    this.collapedSideBar = $event;
+  }
 }
