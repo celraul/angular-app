@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { faBars, faSortDown } from '@fortawesome/free-solid-svg-icons';
-import * as $ from 'jquery';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,14 +15,11 @@ export class NavComponent implements OnInit {
 
     constructor(private router: Router) { }
 
-    ngOnInit() {
-    }
+    ngOnInit() { }
 
-    toggleSidebar() {
-        $('.sidebar-admin').toggleClass('active');
-    }
+    toggleSidebar() { }
 
-    logout(event) {
+    logout(event: any) {
         event.preventDefault();
         this.router.navigate(['/login']);
     }
